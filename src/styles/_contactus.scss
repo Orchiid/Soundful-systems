@@ -1,0 +1,107 @@
+.contactmain {
+  .contactsection {
+  background: url("/images/contact.png") no-repeat  ;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding-top: 15rem;
+  }
+  .contact {
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+    
+
+    &-head {
+      flex: 1;
+      position: relative;
+      
+      text-align-last: center;
+
+      h1 {
+        color: #ff7606;
+        text-shadow: 0px 2px 4px #0000002d;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      p {
+        color: #ff7606;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.5rem;
+      }
+      
+      .btn {
+        color: #fff;
+        background-color: #ba55d3;
+        border-radius: 4px;
+      }
+    }
+  }
+  .adress{
+    
+     margin-top: 3rem;
+      gap: 15rem;
+    .cards{
+      margin-bottom: 2rem;
+      gap: 1rem;
+        
+    img{
+       height: 3rem;
+       width: 3rem;
+      }
+      .items{
+    color:#ff7606;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+      }
+    .message{
+      background: white;
+      height: 30rem;
+      border-radius: 2rem;
+      margin-bottom: 1rem;
+      padding-top: 2rem;
+      padding-left: 1.5rem;
+      
+      p{
+        font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+      }
+   
+      input{
+        border-left: transparent !important;
+        border-right: transparent !important;
+        border-top: transparent !important;
+        border-bottom: .15rem solid black !important;
+        border-radius: 0;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+         padding-top: 2rem;
+        margin-bottom: .3rem;
+        ::placeholder{
+          color: black !important;
+        }
+        
+      }
+      button{
+        background-color:#ff7606;
+        padding: .5rem 1.5rem ;
+      }
+    }
+  }
+  
+}

@@ -1,0 +1,81 @@
+.marketmain {
+   margin-bottom: 5rem;
+  .marketsection {
+  background: url("/images/market1.png") no-repeat  ;
+  background-size: cover;
+  background-position: center;
+  min-height: 120vh;
+  padding-top: 15rem;
+  }
+  .market {
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+    
+
+    &-head {
+      flex: 1;
+      position: relative;
+      
+      text-align-last: center;
+
+      h1 {
+        color: #ff7606;
+        text-shadow: 0px 2px 4px #0000002d;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 72px;
+        padding-bottom: 2rem;
+      }
+
+      p {
+        color: #ff7606;
+        font-family: Lato;
+        font-weight: 300;
+        font-size: 1.5rem;
+        text-align-last: left;
+        
+        padding-bottom: 2rem;
+      }
+
+      .btn {
+        color: #fff;
+        background-color: #ff7606;
+        border-radius: 4px;
+      }
+    }
+  }
+  .cards{
+      margin-top: 5rem;
+        gap: 10rem;
+      }
+  .productsgrid{
+    gap: 5rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    h3{
+      font-style: normal;
+font-weight: 500;
+font-size: 1.25rem;
+color: #ff7606;
+    }
+  }
+  .events{
+    margin-top: 5rem;
+    height: 30rem;
+    width: 50%;
+    h3{
+      font-style: normal;
+font-weight: 500;
+font-size: 2rem;
+color: #ff7606;
+text-align: center;
+    }
+    img{
+      height: 25rem;
+      object-fit: cover;
+    }
+}
+}

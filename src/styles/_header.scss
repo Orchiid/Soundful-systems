@@ -1,0 +1,82 @@
+.header {
+  background-color: #212D3B !important;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+
+  &-nav {
+    padding: 1rem 0 1rem 0;
+     background-color: white !important;
+
+     .searchs{
+            height: 3rem;
+      }
+    .navbar-brand {
+      color: #fff;
+      img{
+        height: 3.5rem;
+      }
+      
+    }
+    .nav {
+      gap: 2.5rem;
+
+      &-item {
+        color: whitesmoke;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 19px;
+      }
+    }
+
+    .btn {
+      &-1 {
+        color: #fff;
+      }
+      &-2 {
+        border: 4px solid #fff;
+        color: #fff;
+      }
+
+      &-2:hover {
+        background-color: #ff7606;
+        color: #fff;
+      }
+    }
+   
+    .curve {
+      border-radius: 0.5rem;
+    }
+  }
+
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255, 0.582);
+    width: 70%;
+    z-index: 1000;
+
+    &-cover {
+      width: 80%;
+      background: white;
+      z-index: 1000;
+      position: relative;
+      min-height: 100vh;
+
+      ul {
+        list-style: none;
+      }
+    }
+  }
+  // @media screen and (max-width: 1050px) {
+  //   .nav {
+  //     display: none;
+  //   }
+
+  //   form {
+  //     display: none;
+  //   }
+  // }
+}

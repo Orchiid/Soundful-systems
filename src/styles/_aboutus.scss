@@ -1,0 +1,52 @@
+.aboutmain {
+  .aboutsection {
+  background: url("/images/about1.png") no-repeat  ;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding-top: 15rem;
+  }
+  .about {
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+    
+
+    &-head {
+      flex: 1;
+      position: relative;
+      
+      text-align-last: center;
+
+      h1 {
+        color: #ff7606;
+        text-shadow: 0px 2px 4px #0000002d;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 72px;
+        padding-bottom: 2rem;
+      }
+
+      p {
+        color: #ff7606;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 30px;
+      }
+
+      .btn {
+        color: #fff;
+        background-color: #ff7606;
+        border-radius: 4px;
+      }
+    }
+  }
+  .cards{
+    margin-bottom: 5rem;
+      margin-top: 5rem;
+        gap: 10rem;
+        
+      }
+}
