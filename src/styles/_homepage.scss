@@ -3,6 +3,7 @@
   // background: url("/images/hero2.jpg") no-repeat  ;
   // background-size: cover;
   // background-position: center;
+
   min-height: 100vh;
   // padding-top: 15rem;
   }
@@ -26,7 +27,7 @@
         font-family: Lato;
         font-style: normal;
         font-weight: bold;
-        font-size: 72px;
+        font-size: 5rem;
         padding-bottom: 2rem;
       }
 
@@ -35,7 +36,7 @@
         font-family: Lato;
         font-style: normal;
         font-weight: normal;
-        font-size: 30px;
+        font-size: 2rem;
       }
 
       .btn {
@@ -159,9 +160,10 @@
       
     }
     @media screen and (max-width: 978px) {
+      
        .see {
          position: relative;
-        left: 15rem;
+        left: 9rem;
       }
     }
     }
@@ -188,6 +190,36 @@
         color: #ff7606;
         font-weight: 600;
       }
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    .herosection{
+      padding-top: 10rem;
+      min-height: 50vh;
+    }
+    .hero{
+      &-head {
+        flex: 1;
+        top: 5rem;
+        left: 6rem;
+        text-align-last: center;
+        h1{
+          font-size: 1.5rem;
+          padding-bottom: .5rem;
+        }
+        p{
+          font-size: .5rem;
+        }
+      }
+
+
+    }
+    .overview{
+       &-center {
+        padding-top: 1rem;
+        padding-bottom: 8rem;
+
+        }
     }
   }
 }

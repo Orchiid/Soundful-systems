@@ -4,8 +4,10 @@ import Link from "next/link";
 
 const HeaderComp = () => {
   const [menu, setMenu] = useState(false);
-  const [open, setOpen] = useState(false);
-
+  const [time, setTime] = useState(false);
+  setTimeout(() => {
+    setTime(true);
+  });
   
   return (
     <Header className="header">
@@ -30,11 +32,11 @@ const HeaderComp = () => {
         <button className="btn btn-outline-warning curve pt-0" type="submit"><i className="fas fa-search"></i></button>
         </div>
 
-        <i className="fas fa-2x fa-bars d-md-none d-flex justify-content-end " role="button" style={{position:"relative", bottom:"2.5rem"}}></i>
+        <i className="fas fa-2x fa-bars d-md-none d-flex justify-content-end " role="button" onClick={() => setMenu(true)} style={{position:"relative", bottom:"2.5rem"}}></i>
               </nav>
       {menu && (
         <div className="mobile-nav d-md-none">
-          {open && (
+          {time && (
             <div className={`mobile-nav-cover`}>
               <div className="p-2 d-flex justify-content-start">
                 <i
@@ -42,11 +44,11 @@ const HeaderComp = () => {
                   role="button"
                   onClick={() => {
                     setMenu(false);
-                    setOpen(false);
+                    setTime(false);
                   }}
                 ></i>
               </div>
-              <ul className="">
+              <ul>
                 {navItems.map((nav, i) => (
                   <li className="nav-item" key={i}>
                     <Link href={nav.link}>
@@ -75,7 +77,7 @@ const navItems = [
     { name: "Home", link: "/" },
      { name: "About Us", link: "/aboutus" },
   { name: "Products", link: "/products" },
-  { name: "Market", link: "/market" },
+  { name: "Events", link: "/events" },
   { name: "Contact Us", link: "/contactus" },
 ];
 
