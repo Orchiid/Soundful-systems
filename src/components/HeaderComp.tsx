@@ -28,7 +28,7 @@ const HeaderComp = () => {
           ))}
         </ul>
  <div className=" d-md-flex d-none searchs">
-        <input className="form-control me-2 curve pt-0" type="search" placeholder="Search for products" aria-label="Search" />
+        <input className="form-control me-2  curve pt-0" type="search" placeholder="Search for products" aria-label="Search" />
         <button className="btn btn-outline-warning curve pt-0" type="submit"><i className="fas fa-search"></i></button>
         </div>
 
