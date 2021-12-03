@@ -1,22 +1,30 @@
+@import "./variables";
+
 .header {
-  background-color: #212D3B !important;
+  background-color: #212d3b !important;
   position: absolute;
   z-index: 1;
   width: 100%;
 
   &-nav {
     padding: 1rem 0 1rem 0;
-     background-color: white !important;
+    background-color: white !important;
 
-     .searchs{
-            height: 3rem;
+    .searchs {
+      height: 3rem;
+      border: 1px solid #f3efef;
+      border-radius: 5px;
+
+      .btn:hover {
+        background-color: #fff !important;
+        border: 1px solid $primary-color !important;
       }
+    }
     .navbar-brand {
       color: #fff;
-      img{
+      img {
         height: 3.5rem;
       }
-      
     }
     .nav {
       gap: 2.5rem;
@@ -28,25 +36,34 @@
         font-weight: normal;
         font-size: 19px;
       }
+
+      &-link {
+        border-bottom: 2px solid #fff;
+
+        &:hover {
+          border-bottom: 2px solid $primary-color;
+        }
+        
+      }
     }
 
-    .btn {
-      &-1 {
-        color: #fff;
-      }
-      &-2 {
-        border: 4px solid #fff;
-        color: #fff;
-      }
+    // .btn {
+    //   &-1 {
+    //     color: #fff;
+    //   }
+    //   &-2 {
+    //     border: 4px solid #fff;
+    //     color: #fff;
+    //   }
 
-      &-2:hover {
-        background-color: #ff7606;
-        color: #fff;
-      }
-    }
-   
+    //   &-2:hover {
+    //     background-color: #ff7606;
+    //     color: #fff;
+    //   }
+    // }
+
     .curve {
-      border-radius: 0.5rem;
+      border: none;
     }
   }
 

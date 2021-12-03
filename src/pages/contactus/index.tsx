@@ -1,52 +1,25 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { Fragment, ReactEventHandler, useState } from "react";
+import React, { Fragment, ReactEventHandler, useRef, useState } from "react";
 import Head from "next/head";
 import styled from "styled-components";
+import emailjs from 'emailjs-com';
 import Frontlayout from "../../layouts/Frontlayout";
 
 const AboutUs = () => {
-  const [mailerState, setMailerState] = useState({
-    name: " ",
-    email: " ",
-    message: " ",
-  });
+  const formRef = React.useRef<HTMLFormElement>(null!)
+  // const [Done, setDone] = useState(false)
 
-  function handleStateChange(event: { target: { name: any; value: any; }; }) {
-    setMailerState((prevState) => ({
-      ...prevState,
-      [event.target.name]: event.target.value,
-    }));
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault()
   }
 
-  const submitEmail = async (event: { preventDefault: () => void; }) => {
-    event.preventDefault();
-    console.log({ mailerState });
-    const response = await fetch("http://localhost:3001/send", {
-      method: "POST",
-      headers: {
-        "Content-type": "application /json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify({ mailerState }),
-    })
-    .then((res) => res.json())
-    .then(async (res) => {
-      const resData = await res;
-      console.log(resData);
-      if (resData.status === "success") {
-        alert("Message Sent");
-      } else if (resData.status === "fail") {
-        alert ("Message failed to send");
-      }
-    })
-    .then(() => {
-      setMailerState({
-        name: " ",
-        email: " ",
-        message: " ",
-      })
-    })
-  };
+  emailjs.sendForm('service_vnvdbnd', 'template_kyxdtw5', formRef.current, 'user_ApwLaCnvBoGT5CAWwVC2L')
+      .then((result) => {
+          console.log(result.text);
+          // setDone(true)
+      }, (error) => {
+          console.log(error.text);
+      });
 
   return (
     <Fragment>
@@ -95,7 +68,7 @@ const AboutUs = () => {
                 </div>
               </div>
               <div className=" container message">
-                <form className="container" onSubmit={submitEmail}>
+                <form className="container" ref={formRef} onSubmit={handleSubmit}>
                   <div className=" form-group ">
                     <p>Send Message</p>
                     {/* <label >Email address</label> */}
@@ -103,10 +76,15 @@ const AboutUs = () => {
                       type="text"
                       className="form-control"
                       placeholder=" Full Name"
-                      onChange={handleStateChange}
-                      value={mailerState.name}
+                      name="user_name"
                     />
                   </div>
+                  {/* <input
+                      type="text"
+                      className="form-control"
+                      placeholder=" Subject"
+                      name="user_subject"
+                    /> */}
                   <div className=" form-group ">
                     <input
                       type="email"
@@ -114,11 +92,10 @@ const AboutUs = () => {
                       id="exampleInputEmail1"
                       aria-describedby="emailHelp"
                       placeholder="Email Address"
-                      onChange={handleStateChange}
-                      value={mailerState.email}
+                      name="user_email"
                     />
                     <small id="emailHelp" className="form-text text-muted ">
-                      We'll never share your email with anyone else.
+                      Well never share your email with anyone else.
                     </small>
                   </div>
                   <div className="form-group">
@@ -126,14 +103,14 @@ const AboutUs = () => {
                       type="text"
                       className="form-control"
                       placeholder="Type Your Message"
-                      onChange={handleStateChange}
-                      value={mailerState.message}
+                      name="message"
                     />
                   </div>
 
-                  <button type="submit" className="btn  text-light">
+                  <button type="submit" value="send" className="btn  text-light">
                     Send
                   </button>
+                  {/* {Done && "Message sent successfully!!"} */}
                 </form>
               </div>
             </div>

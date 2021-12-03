@@ -11,6 +11,7 @@ import Image from "next/image";
 
 const Products = ({ initialProducts }: { initialProducts: IProduct[] }) => {
   const [products] = useState<IProduct[]>(initialProducts);
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <Fragment>
@@ -20,7 +21,7 @@ const Products = ({ initialProducts }: { initialProducts: IProduct[] }) => {
       <Frontlayout>
         <Wrapper className="productmain">
           <section className="productsection">
-            <div className="product-head sound container-fluid">
+            <div className="product-head sound container">
               <h1 className="fs-50 fw-500 text-capitalize lato ">
                 OUR PRODUCTS
               </h1>
@@ -34,13 +35,30 @@ const Products = ({ initialProducts }: { initialProducts: IProduct[] }) => {
           </section>
           <section className="container d-flex flex-column justify-content-lg-center flex-lg-row cards ">
             <div className="d-lg-grid productsgrid">
-              {products.map((product, id) => (
-                <div key={id}>
-                  <img src={product?.image?.url} alt="products" />
-
-                  <h3>{product.Title}</h3>
-                </div>
-              ))}
+              {products
+                .filter((val) => {
+                  if (searchTerm == "") {
+                    return val;
+                  } else if (
+                    val.Title.toLowerCase().includes(searchTerm.toLowerCase())
+                  ) {
+                    return val;
+                  }
+                })
+                .map((product, id) => (
+                  <div className="productsgrid-item" key={id}>
+                    <figure>
+                      <img
+                        src={product?.image?.url}
+                        alt="products"
+                        className=" container-fluid"
+                      />
+                    </figure>
+                    <figcaption className="fs-18 text-center">
+                      {product.Title}
+                    </figcaption>
+                  </div>
+                ))}
             </div>
           </section>
         </Wrapper>
